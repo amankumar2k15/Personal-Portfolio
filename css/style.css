@@ -102,58 +102,21 @@ header>.header {
 }
 
 .header>.box {
-    height: 1.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.1rem;
     width: 2.3rem;
-    position: relative;
     overflow-x: hidden;
+    position: relative;
     display: none;
 }
-
-.header>.box>.line {
-    height: 0.2rem;
-    width: 100%;
-    background-color: var(--text-color);
-    position: absolute;
-    top: calc(50%);
-    transition: all 0.4s;
+.header>.box > #bar, .header>.box > #cross {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.1rem;
 }
-
-.header>.box:hover>.line {
-    transform: translateX(-3rem);
-}
-
-.header>.box::before,
-.header>.box::after {
-    content: "";
-    height: 0.2rem;
-    width: 100%;
-    background-color: var(--text-color);
-    position: absolute;
-    left: 0;
-    transition: all 0.5s;
-}
-
-.header>.box:hover::before {
-    transform: rotate(45deg);
-    position: absolute;
-    top: 45%;
-
-}
-
-.header>.box:hover::after {
-    transform: rotate(-45deg);
-    position: absolute;
-    bottom: 45%;
-}
-
-.header>.box::before {
-    top: 16%;
-}
-
-.header>.box::after {
-    bottom: 6%;
-}
-
 /* <-----------Header Section End---------> */
 
 
@@ -167,7 +130,6 @@ main {
 main>.home-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 21rem 9%;
     gap: 4rem;
     flex-wrap: wrap;
@@ -239,8 +201,8 @@ main>.home-container {
 
 /* <----card section----> */
 .home-container>.card {
-    width: 250px;
-    height: 300px;
+    width: 25rem;
+    height: 30rem;
     background-color: var(--second-bg-color);
     box-shadow: 1rem 2rem 4rem rgba(0, 0, 0, 0.5);
     transform-style: preserve-3d;
@@ -319,51 +281,208 @@ main>.home-container {
 /* <-----------About Section Start---------> */
 main>.about {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8rem;
-    padding: 19rem 9%;
+    gap: 4rem;
+    padding: 8rem 9% 10rem;
     /* flex-wrap: wrap; */
     background: var(--second-bg-color);
 }
 
 /* .about> .about-img {
 } */
-.about>.about-img>img {
-    width: 24vw;
+
+
+.about>.about-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    gap: 3rem;
+    padding: 5rem 0%;
+    flex-wrap: wrap;
+    background: var(--second-bg-color);
+}
+
+.about>.about-content>.about-img {
+    display: flex;
+    justify-content: center;
+    height: 36rem;
+    width: 36rem;
+}
+
+.about>.about-content>.about-img>img {
+    width: 100%;
     box-shadow: 1rem 2rem 4rem rgba(0, 0, 0, 0.5);
 }
 
-.about>.about-content {
-    width: 800px;
-    padding: 0px 30px;
+.about>.about-content>.about-details {
+    width: 62rem;
+    height: 32rem;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 
-.about-content>h2 {
-    text-align: left;
-    line-height: 1.2;
+
+.about-content>.about-details>.about-headings {
+    display: inline-flex;
+    gap: 3rem;
+    padding: 0.5rem 0;
 }
 
-.about-content>h3 {
-    font-size: 2.6rem;
+.about-content>.about-details>.about-headings>h3 {
+  color: var(--text-color) !important;
+  font-weight: 500 !important;
 }
 
-.about-content>p {
+/* <---about-text---> */
+.about-content>.about-details> .about-text{
+    height: 29rem;
+}
+.about-details> .about-text-1{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-details>  .about-text-1> p {
     font-size: 1.6rem;
-    margin: 2rem 0 3rem;
+    /* margin: 2rem 0 3rem; */
 }
 
-.about-content>a {
+.about-details>.about-text-1>a {
     border-radius: 0%;
+    width: 10rem;
 }
+
+/* <---about-text-2---> */
+.about-details> .about-text-2{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    display: none;
+}
+.about-details> .about-text-2 > .edu-details{
+    
+}
+
+.about-details> .about-text-2 > .edu-details > h1{
+    font-size: 1.8rem;
+    color: var(--main-color);
+}
+.about-details> .about-text-2 > .edu-details > h1> span{
+    font-size: 1.4rem;
+}
+.about-details> .about-text-2 > .edu-details > p{
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+
+
+/* <---about-text-3---> */
+.about-details > .about-text-3{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 40rem;
+    display: none;
+}
+.about-details > .about-text-3> .about-stats{
+   width: 100%;
+   padding: 0.3rem 0;
+}
+
+.about-stats > h3{
+    font-size: 1.3rem;
+}
+
+.about-stats >.about-progress-bar{
+    height: 0.5rem;
+    background: var(--bg-color);
+    position: relative;
+    width: 100%;
+    border-radius: 10rem;
+}
+.about-stats >.about-progress-bar::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 0.5rem;
+    border-radius: 10rem;
+    background-color: var(--main-color);
+}
+.about-stats >.about-progress-2::before{
+    width: 80%;
+}
+.about-stats >.about-progress-3::before{
+    width: 70%;
+}
+.about-stats >.about-progress-4::before{
+    width: 80%;
+}
+.about-stats >.about-progress-5::before{
+    width: 90%;
+}
+.about-stats >.about-progress-6::before{
+    width: 75%;
+}
+
+.about-stats >.about-progress-bar::after{
+    content: "";
+    position: absolute;
+    top: 0.1rem;
+    left: 89%;
+    width: 0;
+    height: 0.1rem;
+    border: 5px solid black;
+    border-color: transparent;
+    border-bottom-color: var(--main-color);
+}
+.about-stats >.about-progress-2::after{
+    left: 79%;
+}
+.about-stats >.about-progress-3::after{
+    left: 69%;
+}
+.about-stats >.about-progress-4::after{
+    left: 79%;
+}
+.about-stats >.about-progress-5::after{
+    left: 89%;
+}
+.about-stats >.about-progress-6::after{
+    left: 74%;
+}
+
+
+.about-stats >.about-progress-bar > span{
+    position: absolute;
+    left: var(--left-pos);
+    top: 1.1rem;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    background: var(--bg-color);
+    align-items: center;
+    outline: none;
+    cursor: default;
+}
+
+
+
 
 /* <-----------About Section End---------> */
 
 
 /* <-----------Services Section Start---------> */
 main>.services {
-    padding: 6rem 9%;
+    padding: 6rem 2%;
 }
 
 .services>.services-container {
@@ -371,14 +490,14 @@ main>.services {
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 87px 0 71px 0px;
-    gap: 60px;
+    padding: 8.7rem 0 7.1rem 0;
+    gap: 6rem;
     flex-wrap: wrap;
 }
 
 .services-container>.services-box {
-    width: 350px;
-    height: 350px;
+    width: 35rem;
+    height: 35rem;
     position: relative;
     background-color: var(--second-bg-color);
     display: flex;
@@ -390,29 +509,29 @@ main>.services {
 .services-container>.services-box::before {
     content: "";
     position: absolute;
-    border-top: 4px solid var(--main-color);
-    border-bottom: 4px solid var(--main-color);
-    inset: 50px 24px;
+    border-top: 0.4rem solid var(--main-color);
+    border-bottom: 0.4rem solid var(--main-color);
+    inset: 5rem 2.4rem;
     z-index: -1;
     transition: all 0.5s ease-in-out;
 }
 
 .services-container>.services-box:hover::before {
-    inset: -10px 50px;
+    inset: -1rem 5rem;
 }
 
 .services-container>.services-box::after {
     content: "";
     position: absolute;
-    border-left: 4px solid var(--main-color);
-    border-right: 4px solid var(--main-color);
-    inset: 50px 24px;
+    border-left: 0.4rem solid var(--main-color);
+    border-right: 0.4rem solid var(--main-color);
+    inset: 5rem 2.4rem;
     z-index: -1;
     transition: all 0.5s ease-in-out;
 }
 
 .services-container>.services-box:hover::after {
-    inset: 50px -10px;
+    inset: 5rem -1.0rem;
 }
 
 .services-box>.services-content {
@@ -423,30 +542,30 @@ main>.services {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    animation: 20px;
-    padding: 0 20px;
+    gap: 2rem;
+    animation: 2rem;
+    padding: 0 2rem;
     text-align: center;
     overflow: hidden;
 }
 
 .services-box>.services-content>.services-icon {
     color: var(--main-color);
-    width: 80px;
-    height: 80px;
+    width: 8rem;
+    height: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2.5rem;
     background: var(--bg-color);
-    box-shadow: 0 0 0 4px var(--bg-color), 0 0 0 6px var(--main-color);
+    box-shadow: 0 0 0 0.rem var(--bg-color), 0 0 0 0.6rem var(--main-color);
     transition: all 0.5s ease-in-out;
 }
 
 .services-box:hover>.services-content>.services-icon {
     background-color: var(--main-color);
     color: var(--bg-color);
-    box-shadow: 0 0 0 4px var(--bg-color), 0 0 0 300px var(--main-color);
+    box-shadow: 0 0 0 0.4rem var(--bg-color), 0 0 0 30rem var(--main-color);
 }
 
 .services-box>.services-content>.services-icon>i {
@@ -467,7 +586,7 @@ main>.services {
 }
 
 .services-box>.services-content>.services-text>p {
-    padding: 10px 20px;
+    padding: 1rem 2rem;
 }
 
 .services-box:hover>.services-content>.services-text>p {
@@ -476,7 +595,7 @@ main>.services {
 
 .services-box>.services-content>.services-text>.btn {
     border-radius: 0%;
-    margin-top: 12px;
+    margin-top: 1.2rem;
 }
 
 .services-box:hover>.services-content>.services-text>.btn {
@@ -490,48 +609,34 @@ main>.services {
 
 /* <-----------Projects Section Start---------> */
 main>.project {
-    padding: 8rem 9% 6rem;
+    padding: 8rem 2% 6rem;
     background-color: var(--second-bg-color);
 }
 
 .project>.project-btns {
     display: flex;
     width: 100%;
-    height: 75px;
+    height: 7.5rem;
     justify-content: center;
     align-items: center;
-    gap: 33px;
+    gap: 3.3rem;
 }
 
-.project>.project-btns>.p-btn {
-    font-size: 14px;
-    cursor: pointer;
-    background-color: var(--bg-color);
-    box-shadow: 0.4rem 0.5rem 0.8rem 0.1rem var(--bg-color);
-    color: var(--second-bg-color);
-    padding: 5px 11px;
-    font-weight: 900;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
 
-.project>.project-btns>.p-btn:hover {
-    transform: scale(1.1);
-}
 
 .project>.project-container {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 71px 0;
-    gap: 60px;
+    padding: 7.1rem 0;
+    gap: 6rem;
     flex-wrap: wrap;
 }
 
 .project-container>.project-box {
-    height: 250px;
-    width: 350px;
+    height: 25rem;
+    width: 35rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -545,13 +650,13 @@ main>.project {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 8px 20px;
+    padding: 0.8rem 2rem;
     align-items: center;
 }
 
 .project-box>.links>.link1 {
-    width: 8px;
-    height: 8px;
+    width: 0.8rem;
+    height: 0.8rem;
     border-radius: 50%;
     background-color: var(--primary-color);
     position: relative;
@@ -562,9 +667,9 @@ main>.project {
 .project-box>.links>.link1::after {
     content: "Live";
     position: absolute;
-    left: 16px;
-    font-size: 14px;
-    bottom: -7px;
+    left: 1.6rem;
+    font-size: 1.4rem;
+    bottom: -0.7rem;
     font-weight: bold;
     color: var(--primary-color);
 }
@@ -594,8 +699,8 @@ main>.project {
 
 .project-box>.links>.link2>a>i {
     color: var(--main-color);
-    height: 10px;
-    width: 10px;
+    height: 1rem;
+    width: 1rem;
     font-size: 1.8rem;
     cursor: pointer;
 }
@@ -623,7 +728,7 @@ main>.project {
 .project-box>.project-layer {
     position: absolute;
     left: 0;
-    bottom: -1px;
+    bottom: -0.1rem;
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.7), var(--main-color));
@@ -641,7 +746,7 @@ main>.project {
 }
 
 .project-box:hover .project-layer {
-    bottom: 3px;
+    bottom: 0.3rem;
     transform: translateY(17.5%);
 
 }
@@ -652,7 +757,7 @@ main>.project {
 
 .project-box>.project-layer>p {
     font-size: 1.6rem;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 .project-box>.project-layer>a {
@@ -693,10 +798,10 @@ main>.contact {
 
 .contact>.contact-container {
     display: flex;
-    justify-content: space-between;
-    padding: 10rem 10% 0rem;
+    justify-content: space-around;
+    padding: 10rem 0% 0rem;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 9rem;
 }
 
 .contact-container>.contact-section {
@@ -713,22 +818,22 @@ main>.contact {
     align-items: center;
     width: 34rem;
     height: 6rem;
-    padding: 0 31px;
+    padding: 0 3.1rem;
     gap: 2rem;
     font-size: 1.25rem;
     border-radius: 0.5rem;
 }
 
 .contact-section>.contact-sec-icon>i {
+    height: 2.8rem;
+    width: 2.8rem;
     background: var(--bg-color);
-    height: 28px;
     color: var(--main-color);
     display: flex;
-    width: 28px;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    padding: 0 11px;
+    padding: 0 1.1rem;
 }
 
 .contact-container>.form-section {
@@ -758,7 +863,7 @@ form>.form-box>label {
 form>.form-box>input,
 form>.form-box>textarea {
     width: 100%;
-    padding: 7px 11px;
+    padding: 0.7rem 1.1rem;
     border-radius: 0.5rem;
     background: var(--second-bg-color);
     resize: none;
@@ -785,7 +890,7 @@ input[type=submit] {
 .contact>.map-img {
     padding: 0 !important;
     width: 100%;
-    height: 300px;
+    height: 30rem;
     background-color: red;
 }
 
@@ -799,7 +904,7 @@ input[type=submit] {
 
 .map>.map-img {
     width: 100%;
-    height: 350px;
+    height: 35rem;
     position: relative;
 }
 
@@ -813,8 +918,8 @@ input[type=submit] {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: calc(50% - 4px);
-    left: calc(50% - 4px);
+    top: calc(50% - 0.4rem);
+    left: calc(50% - 0.4rem);
     gap: 1rem;
 
 }
@@ -826,14 +931,13 @@ input[type=submit] {
 }
 
 .map-detail>.map-text {
-    width: 240px;
-    height: 120px;
+    width: 100%;
     color: var(--text-color);
     background-color: var(--bg-color);
     border-radius: 1.2rem;
     display: flex;
     flex-direction: column;
-    padding: 5px 19px;
+    padding: 0.5rem 1.9rem;
 
 }
 
@@ -865,54 +969,64 @@ footer {
 footer>.footer {
     display: flex;
     flex-direction: column;
-}
-footer>.footer > .footer-context{
-    display: flex;
-    flex-direction: row;
-    padding: 8rem 9% ;
+    justify-content: center;
 }
 
-.footer-context > .footer-details{
-    padding: 0 6rem;
-    width: 40%;
+footer>.footer>.footer-context {
+    display: flex;
+    flex-direction: row;
+    padding: 8rem 9%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.footer-context>.footer-details {
+    display: flex;
+    padding: 0 4rem;
+    width: 40rem;
     font-size: 1.3rem;
     word-spacing: 0.2rem;
     cursor: default;
-}
-.footer-context > .footer-details > h1{
-  font-size: 2.5rem;
+    flex-direction: column;
 }
 
-.footer-context > .footer-links{
-    width: 55%;
+.footer-context>.footer-details>h1 {
+    font-size: 2.5rem;
+}
+
+.footer-context>.footer-links {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    gap: 4rem;
     font-size: 1.3rem;
     color: var(--text-color);
 
 }
 
-.footer-links > .footer-link{
+.footer-links>.footer-link {
     display: flex;
     flex-direction: column;
 }
-.footer-links ul{
+
+.footer-links ul {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
 }
-.footer-links li{
-   list-style: none;
-}
-.footer-links a{
-   color: var(--text-color);
-   transition: all 0.3s;
-}
-.footer-links a:hover{
-   color: var(--main-color);
+
+.footer-links li {
+    list-style: none;
 }
 
+.footer-links a {
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--main-color);
+}
 
 
 
@@ -920,21 +1034,24 @@ footer>.footer > .footer-context{
 
 
 
-.footer> .footer-main{
+
+.footer>.footer-main {
     display: flex;
     justify-content: center;
-    padding: 12px 9%;
+    padding: 1.2rem 9%;
     gap: 3rem;
     background-color: var(--second-bg-color);
     cursor: default;
 }
-.footer> .footer-main > p{
+
+.footer>.footer-main>p {
     font-size: 1.1rem;
     letter-spacing: 0.1rem;
 }
-.footer> .footer-main > p:nth-child(1) {
+
+.footer>.footer-main>p:nth-child(1) {
     padding: 0 3rem 0 0;
-    border-right: 2px solid var(--text-color);
+    border-right: 0.2rem solid var(--text-color);
 }
 
 
@@ -988,7 +1105,7 @@ main {
     width: 4rem;
     height: 4rem;
     background: transparent;
-    border: 0.2rem solid var(--main-color);
+    border: 2px solid var(--main-color);
     color: var(--main-color);
     font-size: 2rem;
     border-radius: 50%;
@@ -1031,4 +1148,26 @@ main {
     animation: pulse 2s linear infinite;
 }
 
+
+
+
+
+
+
+
+.pro-abt-btns{
+    font-size: 1.4rem;
+    cursor: pointer;
+    background-color: var(--bg-color);
+    box-shadow: 0.4rem 0.5rem 0.8rem 0.1rem var(--bg-color);
+    color: var(--second-bg-color);
+    padding: 0.5rem 1.1rem;
+    font-weight: 900;
+    border-radius: 0.2rem;
+    transition: all 0.3s ease;
+}
+
+.pro-abt-btns:hover {
+    transform: scale(1.1);
+}
 /* <-----------Utilities Section End----------> */

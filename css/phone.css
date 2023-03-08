@@ -1,0 +1,111 @@
+@media (max-width: 1440px) {
+    .card:hover>.card-img {
+        transform: rotateY(180deg);
+    }
+    .card>.card-img {
+        transform-origin: right;
+    }
+    main>.home-container {
+       flex-direction: column;
+    }
+}
+
+@media (max-width: 1104px) {
+    .footer-context>.footer-details {
+        text-align: center;
+    }
+}
+
+
+
+
+@media (max-width: 900px) {
+    html {
+        font-size: 58%;
+    }
+}
+
+
+
+
+@media (max-width: 800px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header>.box {
+        display: block;
+        z-index: 999;
+    }
+
+    .header>ul {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        background-color: var(--second-bg-color);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .header>ul>li {
+        display: block;
+        padding: 2rem 0;
+        text-align: center;
+    }
+
+    .header>ul>li>a {
+        font-size: 2rem;
+    }
+
+    .header>ul>li:hover {
+        background-color: var(--bg-color);
+    }
+
+}
+
+
+
+@media (max-width: 600px) {
+    html {
+        font-size: 48%;
+    }
+
+    .footer-context>.footer-links {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 452px) {
+    html {
+        font-size: 44%;
+    }
+
+    .footer-context>.footer-links {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 420px) {
+    html {
+        font-size: 40%;
+    }
+
+    .home>.home-content>h3 {
+        font-size: 2.5rem;
+    }
+
+    .home>.home-content>h1 {
+        font-size: 4.5rem;
+    }
+    
+    .home>.home-content>p {
+        font-size: 1.4rem;
+    }
+    
+    .home>.home-button {
+        display: flex;
+        height: 3rem;
+        gap: 2.8rem;
+    }
+}

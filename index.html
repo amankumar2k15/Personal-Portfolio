@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/phone.css" />
+    <script defer src="https://kit.fontawesome.com/404f36c780.js" crossorigin="anonymous"></script>
+    <script defer src="js/script.js"></script>
 </head>
 
 <body>
@@ -18,24 +21,27 @@
                 <a href="index.html">Port<span>Folio</span></a>
             </div>
 
-            <div class="box">
-                <div class="line"></div>
-            </div>
-
-            <ul class="nav">
+            
+            <ul class="nav" id="nav">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#project">Projects</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#project">Projects</a></li>
                 <li><a href="#contact">Contact us</a></li>
+                <li><a href="#map">Find me</a></li>
             </ul>
+
+            <div class="box" id="box">
+                <i class="fa-solid fa-bars" id="bar"></i>
+                <i class="fa-solid fa-xmark" id="cross"></i>
+            </div>
         </section>
     </header>
     <!-- <-----------Header Section End--------->
 
-    <!-- <-----------Home Section Start--------->
+    <!-- <-----------Main Section Start--------->
     <main>
+        <!-- <-----------Home Section Start--------->
         <section class="home-container" id="home">
             <div class="home">
                 <div class="home-content">
@@ -44,31 +50,31 @@
                     <h3>And I'm a <span>Frontend Developer</span></h3>
                     <p> I love to create beautiful and performant products with delightful user experiences.</p>
                     <div class="social-media">
-                        <a href="#"><i class='bx bxl-facebook'></i></a>
-                        <a href="#"><i class='bx bxl-linkedin'></i></a>
-                        <a href="#"><i class='bx bxl-twitter'></i></a>
-                        <a href="#"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://www.facebook.com/home.php" target="_blank" ><i class='bx bxl-facebook'></i></a>
+                        <a href="https://twitter.com/aman266226" target="_blank"><i class='bx bxl-twitter'></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/amankumar1in/" target="_blank"><i class='bx bxl-linkedin'></i></a>
                     </div>
                 </div>
                 <div class="home-button">
-                    <a href="" class="btn">Download CV</a>
-                    <a href="" class="redBtn">Hire Me</a>
+                    <a href="img/resume/Aman-resume.rar" download="Aman-Resume" class="btn">Download CV</a>
+                    <a href="#contact" class="redBtn">Hire Me</a>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-img">
-                    <img src="../img/img1.png" alt="img1">
-                    <img src="../img/img2.png" alt="img2">
+                    <img src="../img/home-img/img1.png" alt="img1">
+                    <img src="../img/home-img/img2.png" alt="img2">
                 </div>
                 <div class="details">
                     <div class="content">
                         <h2> Enthusiastic <br /> <span>Frontend Developer</span></h2>
                         <div class="social-media">
-                            <a href="#"><i class='bx bxl-facebook'></i></a>
-                            <a href="#"><i class='bx bxl-linkedin'></i></a>
-                            <a href="#"><i class='bx bxl-twitter'></i></a>
-                            <a href="#"><i class='bx bxl-linkedin'></i></a>
+                            <a href="https://www.facebook.com/home.php" target="_blank" ><i class='bx bxl-facebook'></i></a>
+                            <a href="https://twitter.com/aman266226" target="_blank"><i class='bx bxl-twitter'></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/amankumar1in/" target="_blank"><i class='bx bxl-linkedin'></i></a>
                         </div>
                     </div>
 
@@ -78,21 +84,93 @@
         <!-- <-----------Home Section End--------->
 
         <!-- <-----------About Section Start--------->
+
+
+
+
         <section class="about" id="about">
-            <div class="about-img">
-                <img src="../img/img2.png" alt="">
-            </div>
+            <h2 class="heading">About <span>Me</span></h2>
             <div class="about-content">
-                <h2 class="heading">About <span>Me</span></h2>
-                <h3>Frontend Developer</h3>
-                <p>I'm a success-driven, determined Frontend Developer. I'm good at using HTML, SCCS & JavaScript to
-                    build accessible component-based web pages and systems. <br />
-                    A passionate person willing to learn more technologies to become a better developer
-                    <br />than i was yesterday.
-                </p>
-                <a href="#" class="btn">Read More</a>
+
+                <div class="about-img">
+                    <img src="../img/home-img/img2.png" alt="">
+                </div>
+
+                <div class="about-details">
+                    <div class="about-headings">
+                        <h3 class="p-btn pro-abt-btns" id="head-dev">Frontend Developer</h3>
+                        <h3 class="p-btn pro-abt-btns" id="head-edu">Education</h3>
+                        <h3 class="p-btn pro-abt-btns" id="head-skills">Skills</h3>
+                    </div>
+                    
+                    <div class="about-text-1 about-text">
+                        <p>I'm a success-driven, determined Front-end Web Developer.I'm good at using HTML, SCSS & JavaScript to build accessible component-based web pages and systems. I also make the websites more & more interactive with web animations. A passionate person willing to learn more technologies to become a better developer than i was yesterday.
+                        </p>
+                        <a href="#contact" class="btn">Get in touch</a>
+                    </div>
+
+                    <div class="about-text-2 about-text">
+                        <div class="edu-details">
+                            <h1>2018-2019 <span>(Intermediate)</span></h1>
+                            <p>Passed 12<sup>th</sup> from National Institute of Open Schooling (NIOS Board).</p>
+                        </div>
+                        <div class="edu-details">
+                            <h1>2019-2022 <span>(Graduation)</span></h1>
+                            <p>Passed BSC(Non-medical) from Maharshi Dayanand University.</p>
+                        </div>
+                        <div class="edu-details">
+                            <h1>2022-Present <span>(Post Graduation)</span></h1>
+                            <p>Pursuing MCA from Chandigarh University.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-text-3 about-text">
+                        <div class="about-stats">
+                            <h3>HTML</h3>
+                             <div class="about-progress-bar ">
+                                <span style="--left-pos: 85%;">90%</span>
+                             </div>
+                        </div>
+                        <div class="about-stats">
+                            <h3>CSS</h3>
+                             <div class="about-progress-bar about-progress-2">
+                                <span style="--left-pos: 75%;">80%</span>
+                             </div>
+                        </div>
+                        <div class="about-stats">
+                            <h3>JavaScript</h3>
+                             <div class="about-progress-bar about-progress-3">
+                                <span style="--left-pos: 65%;">70%</span>
+                             </div>
+                        </div>
+                        <div class="about-stats">
+                            <h3>Bootstrap</h3>
+                             <div class="about-progress-bar about-progress-4">
+                                <span style="--left-pos: 75%;">80%</span>
+                             </div>
+                        </div>
+                        <div class="about-stats">
+                            <h3>SCSS</h3>
+                             <div class="about-progress-bar about-progress-5">
+                                <span style="--left-pos: 85%;">90%</span>
+                             </div>
+                        </div>
+                        <div class="about-stats">
+                            <h3>jQuery</h3>
+                             <div class="about-progress-bar about-progress-6">
+                                <span style="--left-pos: 70%;">75%</span>
+                             </div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
         </section>
+
+
+
+
+
         <!-- <-----------About Section End--------->
 
 
@@ -187,22 +265,29 @@
         </section>
         <!-- <-----------Services Section End--------->
 
+
         <!-- <-----------Projects Section Start--------->
         <section class="project" id="project">
             <h2 class="heading">Our<span> Projects</span></h2>
 
-            <div class="project-container">
-                <div class="project-box">
+            <div class="project-btns p-btns">
+                <div class="p-btn pro-abt-btns" data-btn-num="1">All</div>
+                <div class="p-btn pro-abt-btns" data-btn-num="2">Website</div>
+                <div class="p-btn pro-abt-btns" data-btn-num="3">Coding</div>
+            </div>
 
+            <div class="project-container">
+                <div class="project-box p-btn--1 p-btn--2">
                     <div class="links">
-                        <div class="link1">
-                        </div>
+                        <div class="link1"></div>
                         <div class="link2">
-                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/amankumar2k15/Food-Delivery-Website" target="_blank"><i
+                                    class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
+
                     <div class="img">
-                        <img src="../Project img/project-img-1.png" alt="img1">
+                        <img src="../img/project-img/project-img-1.png" alt="img1">
                     </div>
                     <h2>Food Delivery Website</h2>
 
@@ -210,69 +295,69 @@
                         <h2>Project 1</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corporis, maiores a id cum
                             dolore.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://bestfooddelivery.netlify.app" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
-
                 </div>
 
-                <div class="project-box">
-
+                <div class="project-box p-btn--1 p-btn--3">
                     <div class="links">
-                        <div class="link1">
-
-                        </div>
+                        <div class="link1"></div>
                         <div class="link2">
-                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/amankumar2k15/Validation-Form" target="_blank"> <i
+                                    class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
+
                     <div class="img">
-                        <img src="../Project img/project-img-2.png" alt="img2">
+                        <img src="../img/project-img/project-img-2.png" alt="img2">
                     </div>
-                    <h2>Login Page</h2>
+                    <h2>Validation Form</h2>
 
                     <div class="project-layer">
                         <h2>Project 2</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corporis, maiores a id cum
                             dolore.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://validation-form-aman.netlify.app" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
-
                 </div>
-                <div class="project-box">
 
+                <div class="project-box p-btn--1 p-btn--3">
                     <div class="links">
-                        <div class="link1">
-
-                        </div>
+                        <div class="link1"></div>
                         <div class="link2">
-                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/amankumar2k15/ToDo-List-App" target="_blank"><i
+                                    class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
+
                     <div class="img">
-                        <img src="../Project img/project-img-3.png" alt="img3">
+                        <img src="../img/project-img/project-img-3.png" alt="img3">
                     </div>
-                    <h2>Task List</h2>
+                    <h2>ToDo List</h2>
 
                     <div class="project-layer">
                         <h2>Project 3</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corporis, maiores a id cum
                             dolore.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://todo-list-aman.netlify.app" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
-
                 </div>
-                <div class="project-box">
 
+                <div class="project-box p-btn--1 p-btn--3">
                     <div class="links">
-                        <div class="link1">
-
-                        </div>
+                        <div class="link1"></div>
                         <div class="link2">
-                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/amankumar2k15/Stopwatch" target="_blank"><i
+                                    class="fa-brands fa-github"></i></a>
+
                         </div>
                     </div>
+
                     <div class="img">
-                        <img src="../Project img/project-img-4.png" alt="img4">
+                        <img src="../img/project-img/project-img-4.png" alt="img4">
                     </div>
                     <h2>Stopwatch</h2>
 
@@ -280,22 +365,23 @@
                         <h2>Project 4</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corporis, maiores a id cum
                             dolore.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://stopwatchaman.netlify.app" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
-
                 </div>
-                <div class="project-box">
 
+                <div class="project-box p-btn--1 p-btn--3">
                     <div class="links">
-                        <div class="link1">
-
-                        </div>
+                        <div class="link1"></div>
                         <div class="link2">
-                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/amankumar2k15/Spotify-Clone" target="_blank"> <i
+                                    class="fa-brands fa-github"></i></a>
+
                         </div>
                     </div>
+
                     <div class="img">
-                        <img src="../Project img/project-img-5.png" alt="img5">
+                        <img src="../img/project-img/project-img-5.png" alt="img5">
                     </div>
                     <h2>Spotify Clone</h2>
 
@@ -303,22 +389,22 @@
                         <h2>Project 5</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corporis, maiores a id cum
                             dolore.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://spotifyclone100.netlify.app" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
-
                 </div>
-                <div class="project-box">
 
+                <div class="project-box p-btn--1 p-btn--3">
                     <div class="links">
-                        <div class="link1">
-
-                        </div>
+                        <div class="link1"></div>
                         <div class="link2">
-                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/amankumar2k15/Google-Keep-Clone" target="_blank"><i
+                                    class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
+
                     <div class="img">
-                        <img src="../Project img/project-img-6.png" alt="img6">
+                        <img src="../img/project-img/project-img-6.png" alt="img6">
                     </div>
                     <h2>Google Keep Clone</h2>
 
@@ -326,22 +412,22 @@
                         <h2>Project 6</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corporis, maiores a id cum
                             dolore.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://google-note-clone.netlify.app" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
-
                 </div>
-                <div class="project-box">
 
+                <div class="project-box p-btn--1 p-btn--3">
                     <div class="links">
-                        <div class="link1">
-
-                        </div>
+                        <div class="link1"></div>
                         <div class="link2">
-                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/amankumar2k15/Temperature-Convertor" target="_blank"><i
+                                    class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
+
                     <div class="img">
-                        <img src="../Project img/project-img-8.png" alt="img8">
+                        <img src="../img/project-img/project-img-8.png" alt="img8">
                     </div>
                     <h2>Temperature Covertor</h2>
 
@@ -349,22 +435,21 @@
                         <h2>Project 7</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corporis, maiores a id cum
                             dolore.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://tempconvertor112.netlify.app" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
-
                 </div>
-                <div class="project-box">
 
+                <div class="project-box p-btn--1 p-btn--2">
                     <div class="links">
-                        <div class="link1">
-
-                        </div>
+                        <div class="link1"></div>
                         <div class="link2">
-                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/amankumar2k15/Personal-Portfolio" target="_blank"><i
+                                    class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
                     <div class="img">
-                        <img src="../Project img/project-img-9.png" alt="img9">
+                        <img src="../img/project-img/project-img-9.png" alt="img9">
                     </div>
                     <h2>Personal Portfolio</h2>
 
@@ -372,22 +457,22 @@
                         <h2>Project 8</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corporis, maiores a id cum
                             dolore.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://amankumar-portfolio.netlify.app" target="_blank"><i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
-
                 </div>
-                <div class="project-box">
 
+                <div class="project-box p-btn--1 p-btn--3">
                     <div class="links">
-                        <div class="link1">
-
-                        </div>
+                        <div class="link1"></div>
                         <div class="link2">
-                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/amankumar2k15/Increment-Counter" target="_blank"><i
+                                    class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
+
                     <div class="img">
-                        <img src="../Project img/project-img-7.png" alt="img7">
+                        <img src="../img/project-img/project-img-7.png" alt="img7">
                     </div>
                     <h2>Increament Counter</h2>
 
@@ -395,9 +480,8 @@
                         <h2>Project 9</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam corporis, maiores a id cum
                             dolore.</p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://increament-counter-aman.netlify.app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
-
                 </div>
 
             </div>
@@ -405,20 +489,131 @@
         <!-- <-----------Projects Section End--------->
 
 
-            
+
         <!-- <-----------Contact Section Start--------->
+        <section class="contact" id="contact">
+            <h2 class="heading">Our<span> Contact</span></h2>
+
+            <div class="contact-container">
+                <div class="contact-section">
+                    <div class="contact-sec-icon">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>+91-7357432123</p>
+                    </div>
+                    <div class="contact-sec-icon">
+                        <i class="fa-sharp fa-solid fa-envelope"></i>
+                        <p>aman.kumar2k15@gmail.com</p>
+                    </div>
+                    <div class="contact-sec-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>Sonipat(Haryana), &nbsp India</p>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <form action="https://formsubmit.co/aman.kumar2k15@gmail.com" method="POST">
+                        <div class="form-box">
+                            <label for="name">Your Name</label>
+                            <input type="text" name="name" pattern="[a-zA-Z ]{4,}" id="name" required>
+                        </div>
+                        <div class="form-box">
+                            <label for="email">Your Email</label>
+                            <input type="text" name="email" pattern="[a-z0-9.]+@[a-z0-9.]+\.[a-z]{2,}$" id="email" required>
+                        </div>
+                        <div class="form-box">
+                            <label for="area">Your Message</label>
+                            <textarea name="" id="" cols="12" rows="8"></textarea>
+                        </div>
+
+                        <div class="form-box">
+                            <input type="submit" id="email" value="Send">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </section>
         <!-- <-----------Contact Section End---------->
 
 
-
-
+        <!-- <-----------Map Section Start---------->
+        <section class="map" id="map">
+            <div class="map-img">
+                <img src="../img/contact-img/mapImg.png" alt="mapImg" />
+                <div class="map-detail">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="map-text">
+                        <h2>Here is me</h2>
+                        <p>New Kabirpur, Sonipat(Haryana) <br /> India</p>
+                        <a href="https://www.google.com/maps/@28.9841484,77.0322979,3a,75y,230.08h,85.93t/data=!3m9!1e1!3m7!1sy5Asi7UThtgQRC7-ZIUwEg!2e0!7i13312!8i6656!9m2!1b1!2i21" target="_blank">Open_in_google_map</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <-----------Map Section End---------->
     </main>
     <!-- <-----------Main Section End--------->
 
+    <footer>
+        <section class="footer">
+            <div class="footer-context">
+
+                <div class="footer-details">
+                    <h1>Aman Kumar</h1>
+                    <p>A freelancer, web designer and developer from Sonipat(Haryana), India. I always make websites
+                        that have unique designs and also has a good performance rate.</p>
+                </div>
+
+                <div class="footer-links">
+
+                    <div class="footer-link-1 footer-link">
+                        <h2>Important Links</h2>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#project">Projects</a></li>
+                            <li><a href="#contact">Contact us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-link-2 footer-link">
+                        <h2>Contact Links</h2>
+                        <ul>
+                            <li><a href="tel: +91-7357432123">+91-7357432123</a></li>
+                            <li><a href="mailto: aman.kumar2k15@gmail.com">aman.kumar2k15@gmail.com</a></li>
+                            <li><a href="https://www.google.com/maps/@28.9841484,77.0322979,3a,75y,230.08h,85.93t/data=!3m9!1e1!3m7!1sy5Asi7UThtgQRC7-ZIUwEg!2e0!7i13312!8i6656!9m2!1b1!2i21" target="_blank">Sonipat (Haryana), <br/> India</a></li>
+
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-link-3 footer-link">
+                        <h2>Social Links</h2>
+                        <ul>
+                            <li><a href="https://www.facebook.com/home.php" target="_blank" >Facebook</a></li>
+                            <li><a href="https://twitter.com/aman266226" target="_blank">Twitter</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                            <li><a href="https://www.linkedin.com/in/amankumar1in/" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://github.com/amankumar2k15" target="_blank">Github</a></li>
+                            
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
 
 
-    <script src="https://kit.fontawesome.com/404f36c780.js" crossorigin="anonymous"></script>
-    <script src="../js/script.js"></script>
+            <div class="footer-main">
+                <p>&copy; Portfolio</p>
+                <p>Designed by Aman Kumar</p>
+            </div>
+
+        </section>
+    </footer>
+
+
 </body>
 
 </html>
